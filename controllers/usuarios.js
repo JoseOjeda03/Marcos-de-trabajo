@@ -1,4 +1,3 @@
-
 const { response, request } = require('express');
 
 const usuariosGet = (req = request, res = response) => {
