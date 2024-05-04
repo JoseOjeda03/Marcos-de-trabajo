@@ -1,13 +1,25 @@
 const express = require('express');
 const cors = require('cors');
+const { dbConnection } = require('../Database/config');
 class Server{
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
-        this.usuariosPatch = '/api/usuarios';
+        this.usuariosPatch = '/api/imuebles';
+        this.oficinasPatch= '/api/oficinas'
+        this.ClietePatch= '/api/clientes'
+        this.CitasPatch= '/api/citas'
         this.middlewares();
         this.routes();
+                // Conectar a base de datos
+                this.conectarDB();
+
     }
+    async conectarDB() {
+        await dbConnection();
+    }
+
+
     middlewares(){
 
         this.app.use(cors());
@@ -15,7 +27,11 @@ class Server{
         this.app.use(express.static('public'));
     }
     routes(){
-        this.app.use( this.usuariosPatch,require('../routes/usuarios'));
+        this.app.use( this.usuariosPatch,require('../routes/imuebles'));
+        this.app.use( this.oficinasPatch,require('../routes/oficinas'));
+        this.app.use( this.ClietePatch,require('../routes/clietes'));
+        this.app.use( this.CitasPatch,require('../routes/citas'));
+        
         // this.app.get('/api', (req, res) =>{
         //     res.status(200).json({
         //         msg:'get api'

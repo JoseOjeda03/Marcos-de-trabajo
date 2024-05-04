@@ -1,0 +1,150 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+  </head>
+  <header id="main-header" class="main-header">
+    <section class="navbar-uts">
+      <img src="img/Logo.png" class="logo" alt="Logo" />
+      <nav class="navbar-general">
+        <a href="../index.html">Imuebles</a>
+        <a href="oficinas.html">Oficinas</a>
+        <a href="cliente.html">Clientes</a>
+        <a href="citas.html">Citas</a>
+      </nav>
+      <!--  <button class="btn-academic bg-info">E-market</button> -->
+    </section>
+  </header>
+  <body>
+    <header class="heading">
+      <h1>CLientes</h1>
+    </header>
+
+
+///
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary fs-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Nuevo cliente
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Nuevo cliente</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formulario2" >
+        <div class="mb-3 fs-2">
+          <label  class="form-label">Nombre cliente</label>
+          <input type="text" class="form-control" id="nombreCliente"  >
+    
+        </div>
+        <div class="mb-3 fs-2">
+          <label  class="form-label">Usuario</label>
+              <input type="text" class="form-control"  id="usuarioCliente"  >
+         
+           
+        </div>
+        <div class="mb-3 fs-2">
+          <label  class="form-label">Contraseña</label>
+              <input type="password" class="form-control"  id="contraseñaCliente"  >
+         
+           
+        </div>
+        <div class="mb-3 fs-2">
+          <label  class="form-label">Direccion</label>
+          <input type="text" class="form-control" id="direccionCliente" >
+        </div>
+        <div class="mb-3 fs-2">
+          <label  class="form-label">Telefono</label>
+          <input type="text" class="form-control" id="telefonoCliente" >
+        </div>
+        <div class="mb-3 fs-2">
+        <label  class="form-label">sexo</label>
+        <select class="form-select delete  boton" aria-label="Default select example" id="sexo">
+            <option selected>Seleccione el sexo</option>
+            <option value="MACULINO">MACULINO</option>
+            <option value="FEMENINO">FEMENINO</option>
+    
+          </select>
+       
+      </div>
+
+    <button type="submit" class="btn btn-primary fs-2">Submit</button>
+  </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <div class="imuebles  container d-flex justify-content-center px-4" id="clientes"> 
+
+
+
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-2" id="exampleModalLabel">Actualizar Cliente</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p class="fs-1">
+              <form id="formulario" >
+         <div id="actual"></div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        
+              </form>    
+  
+         
+              </p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <script src="cliente.js"></script>
+  </body>
+  <footer id="pie-pagina" class="bg-verde text-white mt-5 p-5">
+    <div class="container">
+      <div class="col">
+        <p class="lead text-center">Copyright &copy; Compras en Linea</p>
+      </div>
+    </div>
+
+  </footer>
+</html>
